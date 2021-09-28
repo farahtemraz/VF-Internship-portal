@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+<head>
+    <style>
+        body {
+            background-image: url("bgcolor2.png");
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+        h1 {
+            color: #000000;
+            text-align: center;
+        }
+        .viewProjectsButton {
+            position: fixed;
+            left: 170px;
+            top: 170px;
+        }
+
+        .tenders{
+            margin-left: 18%;
+        }
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 95%;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            }
+
+            td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            }
+
+            tr:nth-child(even) {
+            background-color: #dddddd;
+            }
+
+            .chart{
+                width: 70%;
+                margin-left: 20%;
+            }
+            .chart{
+                width: 40%;
+                margin-left: 35%;
+            }
+           
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tenders</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-2"  style="box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">
+        <img id="image" src="/vodafonelogo.png" width="20" height="20">
+        <a class="navbar-brand" style="color: rgb(247, 6, 6); margin-left: 10px;">Vodafone</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:15%; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">
+        <h3 class="w3-bar-item">Menu</h3>
+        <a href="/home" class="w3-bar-item w3-button" style="color: #D2042D ;">Home</a>
+        <a href="/projectsLog" class="w3-bar-item w3-button" style="color: #D2042D ;">New Project</a>
+        <a href="/myProjects" class="w3-bar-item w3-button" style="color: #D2042D ;">Team Projects</a>
+        <a href="/tendersLog" class="w3-bar-item w3-button" style="color: #D2042D ;">New Tender</a>
+        <a href="/myTenders" class="w3-bar-item w3-button" style="color: #D2042D ;">Team Tenders</a>
+        <a href="/tendersSummary" class="w3-bar-item w3-button" style="color: #D2042D ;">Tenders Summary</a>
+
+      </div>
+
+    <div class="container">
+        <h1 style="color: #D2042D ;">Ongoing Tenders</h1>
+        <br>
+        <br>
+        <br>
+    </div>
+
+    <p style="left: 50%;"> <%result%> </p>
+
+    <div class="tenders">
+
+
+        <% result.forEach(function(info){ %>
+        <Table>
+            <tr>
+                <th>Category</th>
+                <th>Details</th>
+            </tr>
+            <tr>
+                <td>
+                    <Strong>Tender Name </Strong>
+                </td>
+                <td>
+                    <%= info.tenderName%>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Tender Owner </Strong>
+                </td>
+                <td>
+                    <%= info.tenderOwner%>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Tender Description </Strong>
+                </td>
+                <td>
+                    <%= info.tenderDescription%>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <Strong>Tender Submission Date</Strong>
+                </td>
+                <td>
+                    <%= info.submissionDate%>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Average Progress of Tender</Strong>
+                </td>
+                <td>
+                    <%= info.averageProgress%>%
+                </td>
+            </tr>                
+            
+        </Table>
+
+        <br>
+        <br>
+        <br>
+
+        <strong>Milestones</strong>
+        <br>
+        <br>
+
+        <strong>A) Before Submission</strong>
+        <br>
+        <br>
+        <strong>1 - Announcement From regulatory Team</strong>
+        <br>
+        <br>
+
+        <Table>
+            <tr>
+                <th>Category</th>
+                <th>Details</th>
+            </tr>
+            <tr>
+                <td>
+                    <Strong>Action: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone1[0].action1%>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Delivery Date: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone1[0].deliverDateMs1%>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Progress: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone1[0].progress1%>%
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Weight to Project: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone1[0].weightToProject1%>%
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>AO: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone1[0].ao1%>
+                </td>
+            </tr>
+
+        </Table>
+        <br>
+        <br>
+
+        <strong>2 - Sit With Stakeholders</strong>
+        <br>
+        <br>
+
+        <Table>
+            <tr>
+                <th>Category</th>
+                <th>Details</th>
+            </tr>
+            <tr>
+                <td>
+                    <Strong>Action: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone2[0].action2%>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Delivery Date: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone2[0].deliverDateMs2%>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Progress: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone2[0].progress2%>%
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Weight to Project: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone2[0].weightToProject2%>%
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>AO: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone2[0].ao2%>
+                </td>
+            </tr>
+
+        </Table>
+        <br>
+        <br>
+
+        <strong>3 - TX To Proceed in Assessment</strong>
+        <br>
+        <br>
+
+        <Table>
+            <tr>
+                <th>Category</th>
+                <th>Details</th>
+            </tr>
+            <tr>
+                <td>
+                    <Strong>Action: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone3[0].action3%>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Delivery Date: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone3[0].deliverDateMs3%>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Progress: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone3[0].progress3%>%
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Weight to Project: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone3[0].weightToProject3%>%
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>AO: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone3[0].ao3%>
+                </td>
+            </tr>
+
+        </Table>
+
+        <br>
+        <br>
+
+        <strong>4 - Power to Proceed in Assessment</strong>
+        <br>
+        <br>
+
+        <Table>
+            <tr>
+                <th>Category</th>
+                <th>Details</th>
+            </tr>
+            <tr>
+                <td>
+                    <Strong>Action: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone4[0].action4%>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Delivery Date: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone4[0].deliverDateMs4%>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Progress: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone4[0].progress4%>%
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Weight to Project: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone4[0].weightToProject4%>%
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>AO: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone4[0].ao4%>
+                </td>
+            </tr>
+
+        </Table>
+
+        <br>
+        <br>
+
+        <strong>5 - RO Budget Team, TX & Radio to Assess</strong>
+        <br>
+        <br>
+
+        <Table>
+            <tr>
+                <th>Category</th>
+                <th>Details</th>
+            </tr>
+            <tr>
+                <td>
+                    <Strong>Action: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone5[0].action5%>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Delivery Date: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone5[0].deliverDateMs5%>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Progress: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone5[0].progress5%>%
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Weight to Project: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone5[0].weightToProject5%>%
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>AO: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone5[0].ao5%>
+                </td>
+            </tr>
+
+        </Table>
+
+        <br>
+        <br>
+
+        <strong>6 - Review Input With Management</strong>
+        <br>
+        <br>
+
+        <Table>
+            <tr>
+                <th>Category</th>
+                <th>Details</th>
+            </tr>
+            <tr>
+                <td>
+                    <Strong>Action: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone6[0].action6%>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Delivery Date: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone6[0].deliverDateMs6%>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Progress: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone6[0].progress6%>%
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Weight to Project: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone6[0].weightToProject6%>%
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>AO: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone6[0].ao6%>
+                </td>
+            </tr>
+
+        </Table>
+
+        <br>
+        <br>
+
+        <strong>7 - Filling Documents</strong>
+        <br>
+        <br>
+
+        <Table>
+            <tr>
+                <th>Category</th>
+                <th>Details</th>
+            </tr>
+            <tr>
+                <td>
+                    <Strong>Action: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone7[0].action7%>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Delivery Date: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone7[0].deliverDateMs7%>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Progress: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone7[0].progress7%>%
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Weight to Project: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone7[0].weightToProject7%>%
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>AO: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone7[0].ao7%>
+                </td>
+            </tr>
+
+        </Table>
+
+        <br>
+        <br>
+
+        <strong>8 - Submission to DC Team</strong>
+        <br>
+        <br>
+
+        <Table>
+            <tr>
+                <th>Category</th>
+                <th>Details</th>
+            </tr>
+            <tr>
+                <td>
+                    <Strong>Action: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone8[0].action8%>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Delivery Date: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone8[0].deliverDateMs8%>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Progress: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone8[0].progress8%>%
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Weight to Project: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone8[0].weightToProject8%>%
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>AO: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone8[0].ao8%>
+                </td>
+            </tr>
+
+        </Table>
+
+        <br>
+        <br>
+
+        <strong>B) After Awarding</strong>
+        <br>
+        <br>
+
+        <strong>1 - Awarding Date and Bid (Start Point / Kickoff)</strong>
+        <br>
+        <br>
+
+        <Table>
+            <tr>
+                <th>Category</th>
+                <th>Details</th>
+            </tr>
+            <tr>
+                <td>
+                    <Strong>Action: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone9[0].action9%>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Delivery Date: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone9[0].deliverDateMs9%>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Progress: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone9[0].progress9%>%
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Weight to Project: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone9[0].weightToProject9%>%
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>AO: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone9[0].ao9%>
+                </td>
+            </tr>
+
+        </Table>
+
+        <br>
+        <br>
+
+        <strong>2 - DC to Set Budget Allocation, Radio to Stamp Sow & issue SFR and Request Permit by RO</strong>
+        <br>
+        <br>
+
+        <Table>
+            <tr>
+                <th>Category</th>
+                <th>Details</th>
+            </tr>
+            <tr>
+                <td>
+                    <Strong>Action: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone10[0].action10%>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Delivery Date: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone10[0].deliverDateMs10%>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Progress: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone10[0].progress10%>%
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Weight to Project: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone10[0].weightToProject10%>%
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>AO: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone10[0].ao10%>
+                </td>
+            </tr>
+
+        </Table>
+
+        <br>
+        <br>
+
+        <strong>3 - Power Team to Stamp on Design, Civil Team to Stamp on Design, Radio to Issue POs, BBs and RVSs</strong>
+        <br>
+        <br>
+
+        <Table>
+            <tr>
+                <th>Category</th>
+                <th>Details</th>
+            </tr>
+            <tr>
+                <td>
+                    <Strong>Action: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone11[0].action11%>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Delivery Date: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone11[0].deliverDateMs11%>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Progress: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone11[0].progress11%>%
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Weight to Project: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone11[0].weightToProject11%>%
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>AO: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone11[0].ao11%>
+                </td>
+            </tr>
+
+        </Table>
+
+        <br>
+        <br>
+
+        <strong>4 - Vendor Appointment & Letter of Intent along with catalouge Update</strong>
+        <br>
+        <br>
+
+        <Table>
+            <tr>
+                <th>Category</th>
+                <th>Details</th>
+            </tr>
+            <tr>
+                <td>
+                    <Strong>Action: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone12[0].action12%>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Delivery Date: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone12[0].deliverDateMs12%>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Progress: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone12[0].progress12%>%
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Weight to Project: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone12[0].weightToProject12%>%
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>AO: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone12[0].ao12%>
+                </td>
+            </tr>
+
+        </Table>
+
+        <br>
+        <br>
+
+        <strong>5 - PO Issuance of RO</strong>
+        <br>
+        <br>
+
+        <Table>
+            <tr>
+                <th>Category</th>
+                <th>Details</th>
+            </tr>
+            <tr>
+                <td>
+                    <Strong>Action: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone13[0].action13%>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Delivery Date: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone13[0].deliverDateMs13%>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Progress: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone13[0].progress13%>%
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Weight to Project: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone13[0].weightToProject13%>%
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>AO: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone13[0].ao13%>
+                </td>
+            </tr>
+
+        </Table>
+
+        <br>
+        <br>
+
+        <strong>6 - PO Issuance of Power & Solar Power Availability on Site (Time of Request / Receiving Power Material)</strong>
+        <br>
+        <br>
+
+        <Table>
+            <tr>
+                <th>Category</th>
+                <th>Details</th>
+            </tr>
+            <tr>
+                <td>
+                    <Strong>Action: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone14[0].action14%>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Delivery Date: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone14[0].deliverDateMs14%>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Progress: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone14[0].progress14%>%
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Weight to Project: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone14[0].weightToProject14%>%
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>AO: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone14[0].ao14%>
+                </td>
+            </tr>
+
+        </Table>
+
+        <br>
+        <br>
+
+        <strong>7 - RO Material Availability in WH & Site Construction</strong>
+        <br>
+        <br>
+
+        <Table>
+            <tr>
+                <th>Category</th>
+                <th>Details</th>
+            </tr>
+            <tr>
+                <td>
+                    <Strong>Action: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone15[0].action15%>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Delivery Date: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone15[0].deliverDateMs15%>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Progress: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone15[0].progress15%>%
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Weight to Project: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone15[0].weightToProject15%>%
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>AO: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone15[0].ao15%>
+                </td>
+            </tr>
+
+        </Table>
+
+        <br>
+        <br>
+
+        <strong>8 - Solar Power Installation</strong>
+        <br>
+        <br>
+
+        <Table>
+            <tr>
+                <th>Category</th>
+                <th>Details</th>
+            </tr>
+            <tr>
+                <td>
+                    <Strong>Action: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone16[0].action16%>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Delivery Date: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone16[0].deliverDateMs16%>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Progress: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone16[0].progress16%>%
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Weight to Project: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone16[0].weightToProject16%>%
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>AO: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone16[0].ao16%>
+                </td>
+            </tr>
+
+        </Table>
+
+        <br>
+        <br>
+
+        <strong>9 - RO Sites Acceptance</strong>
+        <br>
+        <br>
+
+        <Table>
+            <tr>
+                <th>Category</th>
+                <th>Details</th>
+            </tr>
+            <tr>
+                <td>
+                    <Strong>Action: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone17[0].action17%>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Delivery Date: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone17[0].deliverDateMs17%>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Progress: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone17[0].progress17%>%
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Weight to Project: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone17[0].weightToProject17%>%
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>AO: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone17[0].ao17%>
+                </td>
+            </tr>
+
+        </Table>
+
+        <br>
+        <br>
+
+        <strong>10 - Radio Post Activation & Acceptance</strong>
+        <br>
+        <br>
+
+        <Table>
+            <tr>
+                <th>Category</th>
+                <th>Details</th>
+            </tr>
+            <tr>
+                <td>
+                    <Strong>Action: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone18[0].action18%>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Delivery Date: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone18[0].deliverDateMs18%>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Progress: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone18[0].progress18%>%
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>Weight to Project: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone18[0].weightToProject18%>%
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <Strong>AO: </Strong>
+                </td>
+                <td>
+                    <%= info.Milestone18[0].ao18%>
+                </td>
+            </tr>
+
+        </Table>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+    </div>
+
+    <!--  -->
+
+    <div class="chart">
+        <canvas id="myChart"></canvas>
+        <script>
+        
+            var msProgress = [];
+            
+            '<% result.forEach(function(info){ %>'
+            
+            msProgress.push('<%= info.Milestone1[0].progress1%>')
+            msProgress.push('<%= info.Milestone2[0].progress2%>')
+            msProgress.push('<%= info.Milestone3[0].progress3%>')
+            msProgress.push('<%= info.Milestone4[0].progress4%>')
+            msProgress.push('<%= info.Milestone5[0].progress5%>')
+            msProgress.push('<%= info.Milestone6[0].progress6%>')
+            msProgress.push('<%= info.Milestone7[0].progress7%>')
+            msProgress.push('<%= info.Milestone8[0].progress8%>')
+            msProgress.push('<%= info.Milestone9[0].progress8%>')
+            msProgress.push('<%= info.Milestone10[0].progress10%>')
+            msProgress.push('<%= info.Milestone11[0].progress11%>')
+            msProgress.push('<%= info.Milestone12[0].progress12%>')
+            msProgress.push('<%= info.Milestone13[0].progress13%>')
+            msProgress.push('<%= info.Milestone14[0].progress14%>')
+            msProgress.push('<%= info.Milestone15[0].progress15%>')
+            msProgress.push('<%= info.Milestone16[0].progress16%>')
+            msProgress.push('<%= info.Milestone17[0].progress17%>')
+            msProgress.push('<%= info.Milestone18[0].progress18%>')
+            '<% }) %>'
+
+            console.log(msProgress);
+        
+        </script>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <!--  -->
+
+    <!--  -->
+    <div>
+        <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+        <script>
+        var xValues = ['Milestone 1','Milestone 2', 'Milestone 3', 'Milestone 4', 
+                        'Milestone 5', 'Milestone 6', 'Milestone 7', 'Milestone 8', 'Milestone 9',
+                        'Milestone 10', 'Milestone 11', 'Milestone 12', 'Milestone 13',
+                        'Milestone 14', 'Milestone 15', 'Milestone 16', 'Milestone 17',
+                        'Milestone 18'];
+        var yValues = msProgress;
+        var barColors = [
+        "#b91d47",
+        "#00aba9",
+        "#2b5797",
+        "#e8c3b9",
+        "#1e7145",
+        "#CCAA14",
+        "#750985",
+        "#b91d47",
+        "#00aba9",
+        "#2b5797",
+        "#e8c3b9",
+        "#1e7145",
+        "#CCAA14",
+        "#750985",
+        "#b91d47",
+        "#00aba9",
+        "#FF5891",
+        "#335F29"
+        ];
+
+        new Chart("myChart", {
+        type: "pie",
+        data: {
+            labels: xValues,
+            datasets: [{
+            backgroundColor: barColors,
+            data: yValues
+            }]
+        },
+        options: {
+            title: {
+            display: true,
+            text: "Progress Of Each Milestone in %"
+            }
+        }
+        });
+        </script>
+    </div>
+    <!--  -->
+
+        
+        <% }) %>
+
+    </div>
+
+    
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            overflow: visible !important;
+            background-image: url("bgcolor2.png");
+            background-repeat: no-repeat;
+            background-size: 100%;
+        
+        }
+        h1 {
+            color: #000000;
+            text-align: center;
+           
+        }
+        h2 {
+            font-size: 10px;
+            color: #000000;
+            
+            top: 80%;
+        }
+        .container1 {
+            position: absolute;
+            left: 16%;
+            top: 20%;
+            color: #000000;
+        }
+        .button {
+            position: fixed;
+            left: 250px;
+            top: 450px;
+            width: 330px;
+            
+            background-color: #f83646; 
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            -webkit-transition-duration: 0.4s; 
+            transition-duration: 0.4s;
+
+        }
+        .button:hover{
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+
+        .box{
+                
+                width: 100%;
+                padding: 50px;
+                margin: 20px;
+                background-color: #eeeeee;
+                height: 10%;
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+            }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head>
+
+<body>
+    <script>
+        alert("Project state cannot be changed to delivered unless the average progress reaches 100%");  
+    </script>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-2"  style="box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">
+        <img id="image" src="/vodafonelogo.png" width="20" height="20">
+        <a class="navbar-brand" style="color: rgb(247, 6, 6); margin-left: 10px;">Vodafone</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+        
+    <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:15%; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">
+        <h3 class="w3-bar-item">Menu</h3>
+        <a href="/home" class="w3-bar-item w3-button" style="color: #D2042D ;">Home</a>
+        <a href="/projectsLog" class="w3-bar-item w3-button" style="color: #D2042D ;">New Project</a>
+        <a href="/myProjects" class="w3-bar-item w3-button" style="color: #D2042D ;">Team Projects</a>
+        <a href="/tendersLog" class="w3-bar-item w3-button" style="color: #D2042D ;">New Tenders</a>
+        <a href="/myTenders" class="w3-bar-item w3-button" style="color: #D2042D ;">Team Tender</a>
+        <a href="/tendersSummary" class="w3-bar-item w3-button" style="color: #D2042D ;">Tenders Summary</a>
+
+      </div>
+
+    <div>
+        <h1 style="color: #D2042D ;">Ongoing Projects</h1>
+    </div>
+
+    
+
+<div class="container1">
+    <h2 style="color: #D2042D ;" >Editing Form</h2>
+    <br>
+    <div class="box">
+        <form method="POST" action="/findProject">
+            Project Name:<br>
+                <input type="text" id="projectToEdit" name="projectToEdit">
+                <br>
+                <br>
+            <input class="button" type="submit" value="Proceed to Editing">
+        </form>
+    </div>
+    
+</div>
+
+</body>
+</html>

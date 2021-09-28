@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            background-image: url("bgcolor2.png");
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+        h1 {
+            color: #000000;
+            text-align: center;
+        }
+        .viewProjectsButton {
+            position: fixed;
+            left: 170px;
+            top: 170px;
+        }
+
+        .projects{
+            margin-left: 18%;
+        }
+
+        .editProjectsButton {
+            position: fixed;
+            left: 170px;
+            top: 70px;
+        }
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 50%;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            }
+
+            td, th {
+            border: 1px solid #ffffff;
+            text-align: left;
+            padding: 8px;
+            }
+
+            tr:nth-child(even) {
+            background-color: #ffffff;
+            }
+
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Projects</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-2"  style="box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">
+        <img id="image" src="/vodafonelogo.png" width="20" height="20">
+        <a class="navbar-brand" style="color: rgb(247, 6, 6); margin-left: 10px;">Vodafone</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:15%; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">
+        <h3 class="w3-bar-item">Menu</h3>
+        <a href="/home" class="w3-bar-item w3-button" style="color: #D2042D ;">Home</a>
+        <a href="/projectsLog" class="w3-bar-item w3-button" style="color: #D2042D ;">New Project</a>
+        <a href="/myProjects" class="w3-bar-item w3-button" style="color: #D2042D ;">Team Projects</a>
+        <a href="/tendersLog" class="w3-bar-item w3-button" style="color: #D2042D ;">New Tender</a>
+        <a href="/myTenders" class="w3-bar-item w3-button" style="color: #D2042D ;">Team Tenders</a>
+        <a href="/tendersSummary" class="w3-bar-item w3-button" style="color: #D2042D ;">Tenders Summary</a>
+
+      </div>
+
+    <div class="container">
+        <h1 style="color: #D2042D ;">Ongoing Projects</h1>
+        <br>
+    </div>
+
+    <div class="projects">
+        <h3 style="color: #D2042D ;">Select a project from below to view its current details</h3>
+        <br>
+
+        <table>
+            <tr>
+                <th style="background-color: #ffb5b7;">Project Name</th>
+            </tr>
+            <tr>
+                <td>
+                    <% data.forEach(function(info){ %>
+            
+        
+                        <a href= <%= info.ref %> ><strong><%= info.projectName%></strong></a> </br>
+                        <% }) %>
+                </td>
+            </tr>
+        </table>
+
+        
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            overflow: visible !important;
+            background-image: url("bgcolor2.png");
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+        
+        h1 {
+            color: #000000;
+            text-align: center;
+            
+        }
+        h2 {
+            font-size: 10px;
+            color: #000000;
+            -webkit-text-stroke: 1px #000000;
+        }
+        .container1 {
+            position: absolute;
+            left: 16%;
+            top: 15%;
+            color: #000000;
+        }
+        p{
+            color: red;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-2" style="box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">
+        <img id="image" src="/vodafonelogo.png" width="20" height="20">
+        <a class="navbar-brand" style="color: rgb(247, 6, 6); margin-left: 10px;">Vodafone</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- Sidebar -->
+        
+    <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:15%; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">
+        <h3 class="w3-bar-item">Menu</h3>
+        <a href="/home" class="w3-bar-item w3-button" style="color: #D2042D ;">Home</a>
+        <a href="/projectsLog" class="w3-bar-item w3-button" style="color: #D2042D ;">New Project</a>
+        <a href="/myProjects" class="w3-bar-item w3-button" style="color: #D2042D ;">Team Projects</a>
+        <a href="/tendersLog" class="w3-bar-item w3-button" style="color: #D2042D ;">New Tenders</a>
+        <a href="/myTenders" class="w3-bar-item w3-button" style="color: #D2042D ;">Team Tender</a>
+        <a href="/tendersSummary" class="w3-bar-item w3-button" style="color: #D2042D ;">Tenders Summary</a>
+      </div>
+
+    <div>
+        <h1 style="color: #D2042D ;">Ongoing Projects</h1>
+    </div>
+
+<div class="container1">
+    <h2 style="color: #D2042D ;">Editing Form</h2>
+    <br>
+    <script>
+        alert("Please Enter a Number in that field");  
+    </script>
+    <form method="POST" action="/editedAttributes">
+        Project State:<br>
+            <input type="text" id="editedState" name="editedState">
+            <br>
+            <br>
+            <Strong>Milestones:</Strong>
+            <br>
+            <br>
+            <Strong> Milestone 1: Requirments in TP</Strong>
+            <br>
+            <br>
+            Action: <input type="text" id="editedMs1Action" name="editedMs1Action">
+            <br>
+            <br>
+            Delivery Date: <input type="text" id="editedMs1DeliverDate" name="editedMs1DeliverDate">
+            <br>
+            <br>
+            Progress: (Please enter a number that represents the % of your progress in that milestone)<br>
+             <input type="text" id="editedMs1Progress" name="editedMs1Progress"> %
+            <br>
+            <br>
+            Weight to project: (Please enter a number that represents the % weight of this milestone with respect to the whole project) <br>
+            <input type="text" id="editedMs1Weight" name="editedMs1Weight"> %
+            <br>
+            <br>
+            AO: <input type="text" id="editedMs1AO" name="editedMs1AO">
+            <br>
+            <br>
+
+            <Strong>Milestone 2: Getting Pod</Strong>
+            <br>
+            <br>
+            Action: <input type="text" id="editedMs2Action" name="editedMs2Action">
+            <br>
+            <br>
+            Delivery Date: <input type="text" id="editedMs2DeliverDate" name="editedMs2DeliverDate">
+            <br>
+            <br>
+            Progress: (Please enter a number that represents the % of your progress in that milestone)<br>
+            <input type="text" id="editedMs2Progress" name="editedMs2Progress"> %
+            <br>
+            <br>
+            Weight to project: (Please enter a number that represents the % weight of this milestone with respect to the whole project) <br>
+            <input type="text" id="editedMs2Weight" name="editedMs2Weight"> %
+            <br>
+            <br>
+            AO: <input type="text" id="editedMs2AO" name="editedMs2AO">
+            <br>
+            <br>
+
+            <Strong>Milestone 3: Confirm Materal Availability</Strong>
+            <br>
+            <br>
+            Action: <input type="text" id="editedMs3Action" name="editedMs3Action">
+            <br>
+            <br>
+            Delivery Date: <input type="text" id="editedMs3DeliverDate" name="editedMs3DeliverDate">
+            <br>
+            <br>
+            Progress: (Please enter a number that represents the % of your progress in that milestone)<br>
+            <input type="text" id="editedMs3Progress" name="editedMs3Progress"> %
+            <br>
+            <br>
+            Weight to project: (Please enter a number that represents the % weight of this milestone with respect to the whole project) <br>
+            <input type="text" id="editedMs3Weight" name="editedMs3Weight"> %
+            <br>
+            <br>
+            AO: <input type="text" id="editedMs3AO" name="editedMs3AO">
+            <br>
+            <br>
+
+            <Strong>Milestone 4: Send Phasing to RO</Strong>
+            <br>
+            <br>
+            Action: <input type="text" id="editedMs4Action" name="editedMs4Action">
+            <br>
+            <br>
+            Delivery Date: <input type="text" id="editedMs4DeliverDate" name="editedMs4DeliverDate">
+            <br>
+            <br>
+            Progress: (Please enter a number that represents the % of your progress in that milestone)<br>
+            <input type="text" id="editedMs4Progress" name="editedMs4Progress"> %
+            <br>
+            <br>
+            Weight to project: (Please enter a number that represents the % weight of this milestone with respect to the whole project) <br>
+            <input type="text" id="editedMs4Weight" name="editedMs4Weight"> %
+            <br>
+            <br>
+            AO: <input type="text" id="editedMs4AO" name="editedMs4AO">
+            <br>
+            <br>
+
+            <Strong>Milestone 5: Get RO Phasing</Strong>
+            <br>
+            <br>
+            Action: <input type="text" id="editedMs5Action" name="editedMs5Action">
+            <br>
+            <br>
+            Delivery Date: <input type="text" id="editedMs5DeliverDate" name="editedMs5DeliverDate">
+            <br>
+            <br>
+            Progress: (Please enter a number that represents the % of your progress in that milestone)<br>
+            <input type="text" id="editedMs5Progress" name="editedMs5Progress"> %
+            <br>
+            <br>
+            Weight to project: (Please enter a number that represents the % weight of this milestone with respect to the whole project) <br>
+            <input type="text" id="editedMs5Weight" name="editedMs5Weight"> %
+            <br>
+            <br>
+            AO: <input type="text" id="editedMs5AO" name="editedMs5AO">
+            <br>
+            <br>
+
+            <Strong>Milestone 6: Check Integration / Acceptance Progress</Strong>
+                <br>
+                <br>
+                Action: <br>
+                <input type="text" id="editedMs6Action" name="editedMs6Action">
+                <br>
+                <br>
+                Delivery Date: <br>
+                <input type="text" id="editedMs6DeliverDate" name="editedMs6DeliverDate">
+                <br>
+                <br>
+                Progress: <br>
+                <input type="text" id="editedMs6Progress" name="editedMs6Progress"> % <br>
+                *Enter a number that represents the % of your progress in that milestone
+                <br>
+                <br>
+                Weight to project: <br>
+                <input type="text" id="editedMs6Weight" name="editedMs6Weight"> % <br>
+                *Enter a number that represents the % weight of this milestone with respect to the whole project
+                <br>
+                <br>
+                AO: <br>
+                <input type="text" id="editedMs6AO" name="editedMs6AO">
+                <br>
+                <br>
+
+                <Strong>Milestone 7: Check Activation Progress</Strong>
+                <br>
+                <br>
+                Action: <br>
+                <input type="text" id="editedMs7Action" name="editedMs7Action">
+                <br>
+                <br>
+                Delivery Date: <br>
+                <input type="text" id="editedMs7DeliverDate" name="editedMs7DeliverDate">
+                <br>
+                <br>
+                Progress: <br>
+                <input type="text" id="editedMs7Progress" name="editedMs7Progress"> % <br>
+                *Enter a number that represents the % of your progress in that milestone
+                <br>
+                <br>
+                Weight to project: <br>
+                <input type="text" id="editedMs7Weight" name="editedMs7Weight"> % <br>
+                *Enter a number that represents the % weight of this milestone with respect to the whole project
+                <br>
+                <br>
+                AO: <br>
+                <input type="text" id="editedMs7AO" name="editedMs7AO">
+                <br>
+                <br>
+        <input type="submit" value="Edit">
+        <br>
+        <br>
+        <br>
+        <br>
+    </form>
+</div>
+
+</body>
+</html>

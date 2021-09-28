@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            background-image: url("bgcolor2.png");
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+        h1 {
+            color: white;
+            text-align: center;
+        }
+        h2 {
+            font-size: 10px;
+            color: #000000;
+            text-align: center;
+            top: 80%;
+        }
+        .cont {
+            position: relative;
+            left: 600px;
+            top: 50px;
+            color: white;
+        }
+        .container1 {
+            position: fixed;
+            left: 35%;
+            top: 100px;
+            color: #000000;
+        }
+        .button {
+            position: fixed;
+            left: 542px;
+            top: 680px;
+            width: 38%;
+            
+            background-color: #f83646; 
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            -webkit-transition-duration: 0.4s; 
+            transition-duration: 0.4s;
+
+        }
+        .button:hover{
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+        .box{
+                
+                width: 100%;
+                padding: 50px;
+                margin: 20px;
+                background-color: #eeeeee;
+                height: 10%;
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+            }
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Projects</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-2"  style="box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">
+        <img id="image" src="/vodafonelogo.png" width="20" height="20">
+        <a class="navbar-brand" style="color: rgb(247, 6, 6); margin-left: 10px;">Vodafone</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+            </ul>
+        </div>
+    </nav>
+
+        <!-- Sidebar -->
+        <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:15%; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">
+            <h3 class="w3-bar-item">Menu</h3>
+            <a href="/home" class="w3-bar-item w3-button" style="color: #D2042D ;">Home</a>
+            <a href="/projectsLog" class="w3-bar-item w3-button" style="color: #D2042D ;">New Project</a>
+            <a href="/myProjects" class="w3-bar-item w3-button" style="color: #D2042D ;">Team Projects</a>
+            <a href="/tendersLog" class="w3-bar-item w3-button" style="color: #D2042D ;">New Tender</a>
+            <a href="/myTenders" class="w3-bar-item w3-button" style="color: #D2042D ;">Team Tenders</a>
+            <a href="/tendersSummary" class="w3-bar-item w3-button" style="color: #D2042D ;">Tenders Summary</a>
+
+          </div>
+
+    <div class="container1">
+        <div class="box">
+            <form method="POST">
+                <h2 style="color: #D2042D ;">Enter Details of your new project:<br><br></h2>
+                Project Name:<br>
+                <input type="text" id="projectName" name="projectName" required>
+                <br>
+                <br>
+
+                Project State:<br>
+                <select id="state" name="state" onChange="myFunction(this)">
+                    <option value="planned">Planned</option>
+                    <option value="delayed">Delayed</option>
+                    <option value="inProgress">In Progress</option>
+                    <option value="delivered">Delivered</option>
+                </select>
+                <br>
+                <br>
+    
+                <script>
+                    function myFunction(selectObject) {
+                        var value = selectObject.value;  
+                        console.log(value);
+                    }
+                </script>
+                    
+                Project Owner:<br>
+                <input type="text" id="projectOwner" name="projectOwner" required>
+                <br>
+                <br>
+                Description:<br>
+                <input type="text" id="projectDescription" name="projectDescription" required>
+                <br>
+                <br>
+                Start Date:<br>
+                <input type="date" id="startDate" name="startDate" required>
+                <br>
+                <br>
+                Delivery Date:<br>
+                <input type="date" id="deliveryDate" name="deliveryDate" required>
+                <br>
+                <br>
+                <br>
+                <input class="button" type="submit" value="Add Project">
+            </form>
+        </div>
+        
+    </div>
+</body>
+</html>

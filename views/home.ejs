@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<head>
+    <style>
+        body {
+            background-image: url("bgcolor2.png");
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+        h1 {
+            color: #000000;
+            text-align: center;
+        }
+        .cont {
+            position: relative;
+            left: 600px;
+            top: 50px;
+            color: #000000;
+        }
+        .container1 {
+            position: fixed;
+            left: 50px;
+            top: 150px;
+            color: #000000;
+            text-align: center;
+
+        }
+        .container2 {
+            position: fixed;
+            left: 200px;
+            top: 150px;
+            color: #000000;
+            text-align: center;
+
+        }
+        .container3 {
+            position: fixed;
+            left: 350px;
+            top: 150px;
+            color: #000000;
+            text-align: center;
+
+        }
+        .container4 {
+            position: fixed;
+            left: 500px;
+            top: 150px;
+            color: #000000;
+            
+
+        }
+        .readlist {
+            position: fixed;
+            left: 80px;
+            top: 370px;
+        }
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 70%;
+            margin-left: 20%;
+            margin-top: 5%;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            }
+
+            td, th {
+            border: 1px solid #ffffff;
+            text-align: left;
+            padding: 8px;
+            }
+
+            tr:nth-child(even) {
+            background-color: #ffffff;
+            }
+
+            .chart{
+                width: 70%;
+                margin-left: 20%;
+            }
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Projects</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-2" style="box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">
+        <img id="image" src="/vodafonelogo.png" width="20" height="20">
+        <a class="navbar-brand" style="color: rgb(247, 6, 6); margin-left: 10px;">Vodafone</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+<div class="w3-sidebar w3-light-grey w3-bar-block" style="width:15%; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">
+    <h3 class="w3-bar-item">Menu</h3>
+    <a href="/home" class="w3-bar-item w3-button" style="color: #D2042D ;">Home</a>
+    <a href="/projectsLog" class="w3-bar-item w3-button" style="color: #D2042D ;">New Project</a>
+    <a href="/myProjects" class="w3-bar-item w3-button" style="color: #D2042D ;">Team Projects</a>
+    <a href="/tendersLog" class="w3-bar-item w3-button" style="color: #D2042D ;">New Tender</a>
+    <a href="/myTenders" class="w3-bar-item w3-button" style="color: #D2042D ;">Team Tenders</a>
+    <a href="/tendersSummary" class="w3-bar-item w3-button" style="color: #D2042D ;">Tenders Summary</a>
+
+  </div>
+
+    <div class="container">
+        <h1 style="color: #D2042D ;">Projects Summary</h1>
+    </div>
+    <div>
+        <table>
+            <tr>
+              <th style="background-color: #ffb5b7;">Project Name</th>
+              <th style="background-color: #ffb5b7;">Average Progress</th>
+              <th style="background-color: #ffb5b7;">Delivery Date</th>
+              <th style="background-color: #ffb5b7;">Project State</th>
+            </tr>
+            <tr>
+              <td>
+                <% projects.forEach(function(info){ %>
+            
+        
+                    <a href= <%= info.ref %> ><strong><%= info.projectName%></strong></a> </br>
+                    <% }) %>
+              </td>
+              <td>
+                <% projects.forEach(function(info){ %>
+            
+        
+                    <%= info.averageProgress%>% </br>
+                    <% }) %>
+              </td>
+
+              <td>
+                <% projects.forEach(function(info){ %>
+            
+        
+                    <%= info.deliveryDate%> </br>
+                    <% }) %>
+              </td>
+
+              <td>
+                <% projects.forEach(function(info){ %>
+            
+        
+                    <%= info.projectState%> </br>
+                    <% }) %>
+              </td>
+            </tr>
+          </table>
+    </div>
+
+    <br>
+    <br>
+
+    <!--  -->
+    <div class="chart">
+        <canvas id="myChart"></canvas>
+        <script>
+            
+            var avgProgress = [];
+            var projectNames = [];
+            
+            '<% projects.forEach(function(info){ %>'
+            
+            avgProgress.push('<%= info.averageProgress%>')
+            '<% }) %>'
+
+            console.log(avgProgress);
+           
+            '<% projects.forEach(function(info){ %>'
+            
+            projectNames.push('<%= info.projectName%>')
+            '<% }) %>'
+
+            console.log(projectNames);
+   
+        var ctx = document.getElementById('myChart');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: projectNames,
+                datasets: [{
+                    label: 'Average Progress of Project in %',
+                    data: avgProgress,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)',
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)',
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        
+        </script>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+
+    <!--  -->
+</body>
+</html>

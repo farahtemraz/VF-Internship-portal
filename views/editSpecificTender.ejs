@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            overflow: visible !important;
+            background-image: url("bgcolor2.png");
+            background-repeat: repeat;
+            background-size: 100%;
+        }
+        h1 {
+            color: #000000;
+            text-align: center;
+            /* -webkit-text-stroke: 1px #000000; */
+        }
+        h2 {
+            font-size: 10px;
+            color: #000000;
+            /* -webkit-text-stroke: 1px #000000; */
+        }
+        .container1 {
+            position: absolute;
+            left: 25%;
+            top: 15%;
+            color: #000000;
+        }
+        p{
+            color: red;
+        }
+
+        .button {
+            /* position: fixed; */
+            left: 280px;
+            top: 750px;
+            width: 200px;
+            
+            background-color: #f83646; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+
+        }
+        .button:hover{
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+
+        .box{
+                
+                width: 100%;
+                /* border: 3px solid #000000; */
+                padding: 50px;
+                margin: 20px;
+                background-color: #eeeeee;
+                height: 10%;
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+            }
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-2"  style="box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">
+        <img id="image" src="/vodafonelogo.png" width="20" height="20">
+        <a class="navbar-brand" style="color: rgb(247, 6, 6); margin-left: 10px;">Vodafone</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+        
+    <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:15%; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">
+        <h3 class="w3-bar-item">Menu</h3>
+        <a href="/home" class="w3-bar-item w3-button" style="color: #D2042D ;">Home</a>
+        <a href="/projectsLog" class="w3-bar-item w3-button" style="color: #D2042D ;">New Project</a>
+        <a href="/myProjects" class="w3-bar-item w3-button" style="color: #D2042D ;">Team Projects</a>
+        <a href="/tendersLog" class="w3-bar-item w3-button" style="color: #D2042D ;">New Tender</a>
+        <a href="/myTenders" class="w3-bar-item w3-button" style="color: #D2042D ;">Team Tenders</a>
+        <a href="/tendersSummary" class="w3-bar-item w3-button" style="color: #D2042D ;">Tenders Summary</a>
+
+      </div>
+
+    <div>
+        <h1 style="color: #D2042D ;">Ongoing Tenders</h1>
+    </div>
+
+<div class="container1">
+    <h2 style="color: #D2042D ;">Editing Form</h2>
+    <br>
+    <div class="box">
+        <form method="POST" action="/editedAttributesTender">
+
+            
+                <Strong>Milestones:</Strong>
+                <br>
+                <br>
+                <Strong>A) Before Submission:</Strong>
+                <br>
+                <br>
+                <Strong> Milestone 1: Announcement From Regulatory Team </Strong>
+                <br>
+                <br>
+                Action: 
+                <br>
+                <input type="text" id="editedMs1Action" name="editedMs1Action">
+                <br>
+                <br>
+                Delivery Date: <br>
+                <input type="text" id="editedMs1DeliverDate" name="editedMs1DeliverDate">
+                <br>
+                <br>
+                Progress: <br>
+                 <input type="text" id="editedMs1Progress" name="editedMs1Progress"> % <br>
+                 *Enter a number that represents the % of your progress in that milestone
+                <br>
+                <br>
+                Weight to project: <br>
+                <input type="text" id="editedMs1Weight" name="editedMs1Weight"> % <br>
+                *Enter a number that represents the % weight of this milestone with respect to the whole project
+                <br>
+                <br>
+                AO: <BR>
+                <input type="text" id="editedMs1AO" name="editedMs1AO">
+                <br>
+                <br>
+    
+                <Strong>Milestone 2: Sit with Stakeholders</Strong>
+                <br>
+                <br>
+                Action: <br>
+                <input type="text" id="editedMs2Action" name="editedMs2Action">
+                <br>
+                <br>
+                Delivery Date: <BR>
+                <input type="text" id="editedMs2DeliverDate" name="editedMs2DeliverDate">
+                <br>
+                <br>
+                Progress: <br>
+                <input type="text" id="editedMs2Progress" name="editedMs2Progress"> % <br>
+                *Enter a number that represents the % of your progress in that milestone
+                <br>
+                <br>
+                Weight to project <br>
+                <input type="text" id="editedMs2Weight" name="editedMs2Weight"> % <br>
+                *Enter a number that represents the % weight of this milestone with respect to the whole project
+                <br>
+                <br>
+                AO: <br> 
+                <input type="text" id="editedMs2AO" name="editedMs2AO">
+                <br>
+                <br>
+    
+                <Strong>Milestone 3: TX to Proceed in Assessment</Strong>
+                <br>
+                <br>
+                Action: <br>
+                <input type="text" id="editedMs3Action" name="editedMs3Action">
+                <br>
+                <br>
+                Delivery Date: <br>
+                <input type="text" id="editedMs3DeliverDate" name="editedMs3DeliverDate">
+                <br>
+                <br>
+                Progress: <br>
+                <input type="text" id="editedMs3Progress" name="editedMs3Progress"> % <br>
+                *Enter a number that represents the % of your progress in that milestone<br>
+                <br>
+                <br>
+                Weight to project: <br>
+                <input type="text" id="editedMs3Weight" name="editedMs3Weight"> % <br>
+                *Enter a number that represents the % weight of this milestone with respect to the whole project
+                <br>
+                <br>
+                AO: <br>
+                <input type="text" id="editedMs3AO" name="editedMs3AO">
+                <br>
+                <br>
+    
+                <Strong>Milestone 4: Power To Proceed in Assessment</Strong>
+                <br>
+                <br>
+                Action: <br>
+                <input type="text" id="editedMs4Action" name="editedMs4Action">
+                <br>
+                <br>
+                Delivery Date: <br>
+                <input type="text" id="editedMs4DeliverDate" name="editedMs4DeliverDate">
+                <br>
+                <br>
+                Progress: <br>
+                <input type="text" id="editedMs4Progress" name="editedMs4Progress"> % <br>
+                *Enter a number that represents the % of your progress in that milestone
+                <br>
+                <br>
+                Weight to project: <br>
+                <input type="text" id="editedMs4Weight" name="editedMs4Weight"> % <br>
+                *Enter a number that represents the % weight of this milestone with respect to the whole project 
+                <br>
+                <br>
+                AO: <br>
+                <input type="text" id="editedMs4AO" name="editedMs4AO">
+                <br>
+                <br>
+    
+                <Strong>Milestone 5: RO Budget Team, TX & Radio to Assess </Strong>
+                <br>
+                <br>
+                Action: <br>
+                <input type="text" id="editedMs5Action" name="editedMs5Action">
+                <br>
+                <br>
+                Delivery Date: <br>
+                <input type="text" id="editedMs5DeliverDate" name="editedMs5DeliverDate">
+                <br>
+                <br>
+                Progress: <br>
+                <input type="text" id="editedMs5Progress" name="editedMs5Progress"> % <br>
+                *Enter a number that represents the % of your progress in that milestone
+                <br>
+                <br>
+                Weight to project: <br>
+                <input type="text" id="editedMs5Weight" name="editedMs5Weight"> % <br>
+                *Enter a number that represents the % weight of this milestone with respect to the whole project
+                <br>
+                <br>
+                AO: <br>
+                <input type="text" id="editedMs5AO" name="editedMs5AO">
+                <br>
+                <br>
+
+                <!--  -->
+
+                <Strong>Milestone 6: Review Input With Management</Strong>
+                <br>
+                <br>
+                Action: <br>
+                <input type="text" id="editedMs6Action" name="editedMs6Action">
+                <br>
+                <br>
+                Delivery Date: <br>
+                <input type="text" id="editedMs6DeliverDate" name="editedMs6DeliverDate">
+                <br>
+                <br>
+                Progress: <br>
+                <input type="text" id="editedMs6Progress" name="editedMs6Progress"> % <br>
+                *Enter a number that represents the % of your progress in that milestone
+                <br>
+                <br>
+                Weight to project: <br>
+                <input type="text" id="editedMs6Weight" name="editedMs6Weight"> % <br>
+                *Enter a number that represents the % weight of this milestone with respect to the whole project
+                <br>
+                <br>
+                AO: <br>
+                <input type="text" id="editedMs6AO" name="editedMs6AO">
+                <br>
+                <br>
+
+                <Strong>Milestone 7: Filling Documents</Strong>
+                <br>
+                <br>
+                Action: <br>
+                <input type="text" id="editedMs7Action" name="editedMs7Action">
+                <br>
+                <br>
+                Delivery Date: <br>
+                <input type="text" id="editedMs7DeliverDate" name="editedMs7DeliverDate">
+                <br>
+                <br>
+                Progress: <br>
+                <input type="text" id="editedMs7Progress" name="editedMs7Progress"> % <br>
+                *Enter a number that represents the % of your progress in that milestone
+                <br>
+                <br>
+                Weight to project: <br>
+                <input type="text" id="editedMs7Weight" name="editedMs7Weight"> % <br>
+                *Enter a number that represents the % weight of this milestone with respect to the whole project
+                <br>
+                <br>
+                AO: <br>
+                <input type="text" id="editedMs7AO" name="editedMs7AO">
+                <br>
+                <br>
+
+                <Strong>Milestone 8: Submission to DC Team</Strong>
+                <br>
+                <br>
+                Action: <br>
+                <input type="text" id="editedMs8Action" name="editedMs8Action">
+                <br>
+                <br>
+                Delivery Date: <br>
+                <input type="text" id="editedMs8DeliverDate" name="editedMs8DeliverDate">
+                <br>
+                <br>
+                Progress: <br>
+                <input type="text" id="editedMs8Progress" name="editedMs8Progress"> % <br>
+                *Enter a number that represents the % of your progress in that milestone
+                <br>
+                <br>
+                Weight to project: <br>
+                <input type="text" id="editedMs8Weight" name="editedMs8Weight"> % <br>
+                *Enter a number that represents the % weight of this milestone with respect to the whole project
+                <br>
+                <br>
+                AO: <br>
+                <input type="text" id="editedMs8AO" name="editedMs8AO">
+                <br>
+                <br>
+
+                <Strong>B) After Awarding:</Strong>
+                <br>
+                <br>
+                <Strong> Milestone 1: Awarding date of Bid (Start Point / Kickoff) </Strong>
+                <br>
+                <br>
+                Action: 
+                <br>
+                <input type="text" id="editedMs9Action" name="editedMs9Action">
+                <br>
+                <br>
+                Delivery Date: <br>
+                <input type="text" id="editedMs9DeliverDate" name="editedMs9DeliverDate">
+                <br>
+                <br>
+                Progress: <br>
+                 <input type="text" id="editedMs9Progress" name="editedMs9Progress"> % <br>
+                 *Enter a number that represents the % of your progress in that milestone
+                <br>
+                <br>
+                Weight to project: <br>
+                <input type="text" id="editedMs9Weight" name="editedMs9Weight"> % <br>
+                *Enter a number that represents the % weight of this milestone with respect to the whole project
+                <br>
+                <br>
+                AO: <BR>
+                <input type="text" id="editedMs9AO" name="editedMs9AO">
+                <br>
+                <br>
+
+                <Strong> Milestone 2: DC To Set Budget Allocation, Radio to Stamp Sow & Issue SFR, Request Permits by RO</Strong>
+                <br>
+                Action: 
+                <br>
+                <input type="text" id="editedMs10Action" name="editedMs10Action">
+                <br>
+                <br>
+                Delivery Date: <br>
+                <input type="text" id="editedMs10DeliverDate" name="editedMs10DeliverDate">
+                <br>
+                <br>
+                Progress: <br>
+                 <input type="text" id="editedMs10Progress" name="editedMs10Progress"> % <br>
+                 *Enter a number that represents the % of your progress in that milestone
+                <br>
+                <br>
+                Weight to project: <br>
+                <input type="text" id="editedMs10Weight" name="editedMs10Weight"> % <br>
+                *Enter a number that represents the % weight of this milestone with respect to the whole project
+                <br>
+                <br>
+                AO: <BR>
+                <input type="text" id="editedMs10AO" name="editedMs10AO">
+                <br>
+                <br>
+
+                <Strong> Milestone 3: Power Team to Stamp on Design & Civil Team to Stamp on Design & Radio to Stamp Issue POs of BBs & RRVs </Strong>
+                <br>
+                Action: 
+                <br>
+                <input type="text" id="editedMs11Action" name="editedMs11Action">
+                <br>
+                <br>
+                Delivery Date: <br>
+                <input type="text" id="editedMs11DeliverDate" name="editedMs11DeliverDate">
+                <br>
+                <br>
+                Progress: <br>
+                 <input type="text" id="editedMs11Progress" name="editedMs11Progress"> % <br>
+                 *Enter a number that represents the % of your progress in that milestone
+                <br>
+                <br>
+                Weight to project: <br>
+                <input type="text" id="editedMs11Weight" name="editedMs11Weight"> % <br>
+                *Enter a number that represents the % weight of this milestone with respect to the whole project
+                <br>
+                <br>
+                AO: <BR>
+                <input type="text" id="editedMs11AO" name="editedMs11AO">
+                <br>
+                <br>
+
+                <Strong> Milestone 4: Vendor Appointment & Letter of Intent along with catalouge Update</Strong>
+                <br>
+                Action: 
+                <br>
+                <input type="text" id="editedMs12Action" name="editedMs12Action">
+                <br>
+                <br>
+                Delivery Date: <br>
+                <input type="text" id="editedMs12DeliverDate" name="editedMs12DeliverDate">
+                <br>
+                <br>
+                Progress: <br>
+                 <input type="text" id="editedMs12Progress" name="editedMs12Progress"> % <br>
+                 *Enter a number that represents the % of your progress in that milestone
+                <br>
+                <br>
+                Weight to project: <br>
+                <input type="text" id="editedMs12Weight" name="editedMs12Weight"> % <br>
+                *Enter a number that represents the % weight of this milestone with respect to the whole project
+                <br>
+                <br>
+                AO: <BR>
+                <input type="text" id="editedMs12AO" name="editedMs12AO">
+                <br>
+                <br>
+
+                <Strong> Milestone 5: PO Issuance of RO</Strong>
+                <br>
+                Action: 
+                <br>
+                <input type="text" id="editedMs13Action" name="editedMs13Action">
+                <br>
+                <br>
+                Delivery Date: <br>
+                <input type="text" id="editedMs13DeliverDate" name="editedMs13DeliverDate">
+                <br>
+                <br>
+                Progress: <br>
+                 <input type="text" id="editedMs13Progress" name="editedMs13Progress"> % <br>
+                 *Enter a number that represents the % of your progress in that milestone
+                <br>
+                <br>
+                Weight to project: <br>
+                <input type="text" id="editedMs13Weight" name="editedMs13Weight"> % <br>
+                *Enter a number that represents the % weight of this milestone with respect to the whole project
+                <br>
+                <br>
+                AO: <BR>
+                <input type="text" id="editedMs13AO" name="editedMs13AO">
+                <br>
+                <br>
+
+                <Strong> Milestone 6: PO Issuance of Power & Solar Power Availability on Site (Time of Request / Receiving  Material)</Strong>
+                <br>
+                Action: 
+                <br>
+                <input type="text" id="editedMs14Action" name="editedMs14Action">
+                <br>
+                <br>
+                Delivery Date: <br>
+                <input type="text" id="editedMs14DeliverDate" name="editedMs14DeliverDate">
+                <br>
+                <br>
+                Progress: <br>
+                 <input type="text" id="editedMs14Progress" name="editedMs14Progress"> % <br>
+                 *Enter a number that represents the % of your progress in that milestone
+                <br>
+                <br>
+                Weight to project: <br>
+                <input type="text" id="editedMs14Weight" name="editedMs14Weight"> % <br>
+                *Enter a number that represents the % weight of this milestone with respect to the whole project
+                <br>
+                <br>
+                AO: <BR>
+                <input type="text" id="editedMs14AO" name="editedMs14AO">
+                <br>
+                <br>
+
+                <Strong> Milestone 7: RO Material Availability in WH & Site Construction</Strong>
+                <br>
+                Action: 
+                <br>
+                <input type="text" id="editedMs15Action" name="editedMs15Action">
+                <br>
+                <br>
+                Delivery Date: <br>
+                <input type="text" id="editedMs15DeliverDate" name="editedMs15DeliverDate">
+                <br>
+                <br>
+                Progress: <br>
+                 <input type="text" id="editedMs15Progress" name="editedMs15Progress"> % <br>
+                 *Enter a number that represents the % of your progress in that milestone
+                <br>
+                <br>
+                Weight to project: <br>
+                <input type="text" id="editedMs15Weight" name="editedMs15Weight"> % <br>
+                *Enter a number that represents the % weight of this milestone with respect to the whole project
+                <br>
+                <br>
+                AO: <BR>
+                <input type="text" id="editedMs15AO" name="editedMs15AO">
+                <br>
+                <br>
+
+                <Strong> Milestone 8: Solar Power Installation</Strong>
+                <br>
+                Action: 
+                <br>
+                <input type="text" id="editedMs16Action" name="editedMs16Action">
+                <br>
+                <br>
+                Delivery Date: <br>
+                <input type="text" id="editedMs16DeliverDate" name="editedMs16DeliverDate">
+                <br>
+                <br>
+                Progress: <br>
+                 <input type="text" id="editedMs16Progress" name="editedMs16Progress"> % <br>
+                 *Enter a number that represents the % of your progress in that milestone
+                <br>
+                <br>
+                Weight to project: <br>
+                <input type="text" id="editedMs16Weight" name="editedMs16Weight"> % <br>
+                *Enter a number that represents the % weight of this milestone with respect to the whole project
+                <br>
+                <br>
+                AO: <BR>
+                <input type="text" id="editedMs16AO" name="editedMs16AO">
+                <br>
+                <br>
+
+                <Strong> Milestone 9: RO Sites Acceptance</Strong>
+                <br>
+                Action: 
+                <br>
+                <input type="text" id="editedMs17Action" name="editedMs17Action">
+                <br>
+                <br>
+                Delivery Date: <br>
+                <input type="text" id="editedMs17DeliverDate" name="editedMs17DeliverDate">
+                <br>
+                <br>
+                Progress: <br>
+                 <input type="text" id="editedMs17Progress" name="editedMs17Progress"> % <br>
+                 *Enter a number that represents the % of your progress in that milestone
+                <br>
+                <br>
+                Weight to project: <br>
+                <input type="text" id="editedMs17Weight" name="editedMs17Weight"> % <br>
+                *Enter a number that represents the % weight of this milestone with respect to the whole project
+                <br>
+                <br>
+                AO: <BR>
+                <input type="text" id="editedMs17AO" name="editedMs17AO">
+                <br>
+                <br>
+
+                <Strong> Milestone 10: Radio Post Activation & Acceptance</Strong>
+                <br>
+                Action: 
+                <br>
+                <input type="text" id="editedMs18Action" name="editedMs18Action">
+                <br>
+                <br>
+                Delivery Date: <br>
+                <input type="text" id="editedMs18DeliverDate" name="editedMs18DeliverDate">
+                <br>
+                <br>
+                Progress: <br>
+                 <input type="text" id="editedMs18Progress" name="editedMs18Progress"> % <br>
+                 *Enter a number that represents the % of your progress in that milestone
+                <br>
+                <br>
+                Weight to project: <br>
+                <input type="text" id="editedMs18Weight" name="editedMs18Weight"> % <br>
+                *Enter a number that represents the % weight of this milestone with respect to the whole project
+                <br>
+                <br>
+                AO: <BR>
+                <input type="text" id="editedMs18AO" name="editedMs18AO">
+                <br>
+                <br>
+            <input class="button" type="submit" value="Edit">
+            <br>
+            <br>
+            <br>
+            <br>
+        </form>
+    </div>
+    
+</div>
+
+</body>
+</html>
